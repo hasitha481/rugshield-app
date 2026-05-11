@@ -1,5 +1,5 @@
 // api/_lib/dflowClient.ts
-import { getEnv } from './env';
+import { getEnv } from './env.js';
 
 /**
  * DFlow API base URL.

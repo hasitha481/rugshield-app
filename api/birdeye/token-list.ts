@@ -1,12 +1,12 @@
 // api/birdeye/token-list.ts
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { handlePreflight } from '../_lib/cors';
-import { EnvValidationError } from '../_lib/env';
+import { handlePreflight } from '../_lib/cors.js';
+import { EnvValidationError } from '../_lib/env.js';
 import {
   birdeyeGet,
   BirdeyeRateLimitError,
   BirdeyeUpstreamError,
-} from '../_lib/birdeyeClient';
+} from '../_lib/birdeyeClient.js';
 
 const ROUTE_LABEL = 'birdeye/token-list';
 const CACHE_TTL_SECONDS = 600; // trending list changes slowly

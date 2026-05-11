@@ -1,7 +1,7 @@
 // api/birdeye/security.ts
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { getEnv, EnvValidationError } from '../_lib/env';
-import { handlePreflight } from '../_lib/cors';
+import { getEnv, EnvValidationError } from '../_lib/env.js';
+import { handlePreflight } from '../_lib/cors.js';
 
 const BIRDEYE_BASE = 'https://public-api.birdeye.so';
 const BIRDEYE_PATH = '/defi/token_security';

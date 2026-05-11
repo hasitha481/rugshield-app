@@ -1,12 +1,12 @@
 // api/dflow/quote.ts
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { handlePreflight } from '../_lib/cors';
-import { EnvValidationError } from '../_lib/env';
+import { handlePreflight } from '../_lib/cors.js';
+import { EnvValidationError } from '../_lib/env.js';
 import {
   dflowGet,
   DFlowRateLimitError,
   DFlowUpstreamError,
-} from '../_lib/dflowClient';
+} from '../_lib/dflowClient.js';
 
 const ROUTE_LABEL = 'dflow/quote';
 const SOLANA_ADDRESS_REGEX = /^[1-9A-HJ-NP-Za-km-z]{32,44}$/;

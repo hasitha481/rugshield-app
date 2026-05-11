@@ -1,6 +1,6 @@
 // api/_lib/birdeyeClient.ts
-import { getEnv } from './env';
-import { sharedCache } from './cache';
+import { getEnv } from './env.js';
+import { sharedCache } from './cache.js';
 
 const BIRDEYE_BASE = 'https://public-api.birdeye.so';
 

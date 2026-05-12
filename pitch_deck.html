@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RugShield Pitch Deck</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* 1. CORE SETUP */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: #121212; display: grid; gap: 40px; place-items: center; padding: 40px 0; font-family: 'Urbanist', sans-serif; }
+
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            background-color: #000;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 60px;
+            color: #f5f5f5;
+        }
+
+        /* Decorative Background Elements */
+        .slide-container::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(222, 255, 154, 0.1) 0%, transparent 70%);
+            z-index: 0;
+        }
+
+        .slide-container::after {
+            content: '';
+            position: absolute;
+            bottom: 40px;
+            left: 60px;
+            right: 60px;
+            height: 1px;
+            background: rgba(218, 255, 222, 0.2);
+            z-index: 1;
+        }
+
+        .slide-container > * { position: relative; z-index: 2; }
+
+        /* TYPOGRAPHY */
+        h1 { font-size: 80px; line-height: 1.1; font-weight: 700; color: #f5f5f5; margin-bottom: 20px; }
+        h1 span { color: #deff9a; }
+        
+        .slide-title { font-size: 54px; font-weight: 500; margin-bottom: 40px; width: 100%; text-align: left; color: #f5f5f5; }
+        .slide-title span { color: #deff9a; }
+
+        h3 { font-size: 28px; font-weight: 600; color: #deff9a; margin-bottom: 15px; }
+        p, li { font-size: 20px; line-height: 1.6; color: #daffde; margin-bottom: 10px; }
+        
+        .subtitle { font-size: 24px; color: #daffde; max-width: 800px; margin: 0 auto; line-height: 1.4; }
+
+        .content-area { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; width: 100%; }
+
+        /* LAYOUTS */
+        .title-layout { text-align: center; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+
+        .section-title-layout { text-align: center; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        .section-title-layout hr { width: 100px; height: 4px; background: #deff9a; border: none; margin-bottom: 30px; }
+        .section-title-layout h2 { font-size: 72px; }
+
+        .two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; width: 100%; }
+
+        .tiled-content { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; width: 100%; }
+        .tile { background: #1a1a1a; padding: 35px; border-radius: 20px; border: 1px solid rgba(222, 255, 154, 0.15); display: flex; flex-direction: column; gap: 15px; }
+        .tile .icon-container { width: 60px; height: 60px; background: #deff9a; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #000; font-size: 24px; margin-bottom: 10px; }
+
+        .image-container { border-radius: 24px; border: 1px solid #daffde; overflow: hidden; height: 400px; }
+        .image-container img { width: 100%; height: 100%; object-fit: cover; }
+
+        .highlight-numbers-layout { align-items: center; }
+        .number-box { text-align: center; }
+        .number { font-size: 140px; font-weight: 700; color: #deff9a; line-height: 1; }
+        .number-label { font-size: 28px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; }
+
+        .qa-layout { text-align: center; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        .contact-info { margin-top: 50px; display: flex; gap: 30px; font-size: 18px; color: #deff9a; }
+    </style>
+</head>
+<body>
+
+<div class="slide-container" id="slide1">
+    <div class="title-layout">
+        <h1>Rug<span>Shield</span></h1>
+        <p class="subtitle">The Real-time Solana Security Terminal. Analyze token safety and execute MEV-protected swaps with production-grade resiliency.</p>
+    </div>
+</div>
+
+<div class="slide-container" id="slide2">
+    <div class="section-title-layout">
+        <hr>
+        <h2>The <span>Problem</span></h2>
+        <p class="subtitle">Navigating the wild west of Solana DeFi.</p>
+    </div>
+</div>
+
+<div class="slide-container" id="slide3">
+    <h2 class="slide-title">Market <span>Vulnerabilities</span></h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div class="tile">
+                <div class="icon-container"><i class="fa-solid fa-skull-crossbones"></i></div>
+                <h3>Fragmented Security</h3>
+                <p>New traders lack the tools to audit complex token contracts in real-time, leading to millions lost in rug pulls and honeypots daily.</p>
+            </div>
+            <div class="tile">
+                <div class="icon-container"><i class="fa-solid fa-robot"></i></div>
+                <h3>MEV Front-Running</h3>
+                <p>Users on standard DEXs are consistently exploited by sandwich bots and MEV attacks, resulting in significant slippage and unfair trade execution.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide4">
+    <h2 class="slide-title">The RugShield <span>Solution</span></h2>
+    <div class="content-area">
+        <div class="tiled-content">
+            <div class="tile">
+                <div class="icon-container"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                <h3>Deep Auditing</h3>
+                <p>Comprehensive 6-pillar risk assessment using Birdeye's granular on-chain data for instant safety scores.</p>
+            </div>
+            <div class="tile">
+                <div class="icon-container"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3>Protected Swaps</h3>
+                <p>Native DFlow integration for superior MEV protection, ensuring users get the exact output they expect.</p>
+            </div>
+            <div class="tile">
+                <div class="icon-container"><i class="fa-solid fa-bolt"></i></div>
+                <h3>Resilient Routing</h3>
+                <p>Engineered with 100% uptime through custom fallbacks, maintaining trading capability under any conditions.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide5">
+    <h2 class="slide-title">Unmatched <span>Technical</span> Depth</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div class="text-side">
+                <h3>Strategic API Integration</h3>
+                <ul>
+                    <li><strong>Birdeye Security:</strong> Auditing liquidity, deployer behavior, and holder concentration.</li>
+                    <li><strong>DFlow Protocol:</strong> Executing trades via MEV-protected private mempools.</li>
+                    <li><strong>Jupiter Aggregator:</strong> Automated fallback routing to ensure liquidity access is never lost.</li>
+                </ul>
+            </div>
+            <div class="image-container">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/9205044598658487386" alt="Secure Digital Shield">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide6">
+    <h2 class="slide-title">Production-Ready <span>Resiliency</span></h2>
+    <div class="content-area">
+        <div class="two-column highlight-numbers-layout">
+            <div class="number-box">
+                <div class="number">100%</div>
+                <div class="number-label">Swap Uptime</div>
+            </div>
+            <div class="text-box">
+                <h3>Resilience as a Feature</h3>
+                <p>RugShield is not just a scanner; it is a mission-critical terminal. Our architecture detects API failures in real-time and switches routing to Jupiter, providing a seamless fail-safe for every trade.</p>
+                <p>Deployed via Vercel Serverless Functions to ensure maximum performance and security at the edge.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide7">
+    <h2 class="slide-title">Future <span>Roadmap</span></h2>
+    <div class="content-area">
+        <div class="tiled-content">
+            <div class="tile">
+                <h3>Phase 1</h3>
+                <p>Integration of AI-driven sentiment analysis from X (Twitter) to augment the on-chain Rug Score.</p>
+            </div>
+            <div class="tile">
+                <h3>Phase 2</h3>
+                <p>Expansion of the mobile-first trading terminal and introduction of safe limit orders.</p>
+            </div>
+            <div class="tile">
+                <h3>Phase 3</h3>
+                <p>RugShield SDK for other developers to integrate our 6-pillar security audit into their dApps.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide8">
+    <div class="qa-layout">
+        <h1>Questions<span>?</span></h1>
+        <p class="subtitle">Building the most secure terminal for the Solana Ecosystem.</p>
+        <div class="contact-info">
+            <span><i class="fa-brands fa-github"></i> hasitha481/rugshield-app</span>
+            <span><i class="fa-solid fa-globe"></i> rugshield-app.vercel.app</span>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
